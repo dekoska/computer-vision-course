@@ -78,10 +78,10 @@ if not isinstance(screen_contour, np.ndarray):
     print('Nie można przetworzyć obrazu.')
     sys.exit(1)
 
-image_v = cv2.drawContours(image.copy(), screen_contour, -1, (0, 255, 0), 10)
+image_v = cv2.drawContours(image.copy(), screen_contour, -1, 255, 10)
 cv2.imshow('outline v', image_v)
 
-image_cnt = cv2.drawContours(image.copy(), [screen_contour], -1, (0, 255, 0), 3)
+image_cnt = cv2.drawContours(image.copy(), [screen_contour], -1, 255, 3)
 cv2.imshow('outline contour', image_cnt)
 
 warped_image = get_perspective(original_image, screen_contour, ratio)
